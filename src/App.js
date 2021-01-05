@@ -1,25 +1,63 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import calculatorStyles from "./calc.css";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends React.Component {
+  constructor() {
+    super();
+    this.state = {
+      output: "Output",
+    };
+    this.handleClick = this.handleClick.bind(this);
+    this.handleClear = this.handleClear.bind(this);
+  }
+  handleClick(e) {
+    this.setState({ output: e.target.innerHTML });
+  }
+  handleClear(e) {
+    this.setState({ output: "Output" });
+  }
+  render() {
+    return (
+      <div className="calculator" style={calculatorStyles}>
+        <div className="welcome-statement">
+          <h1>React Calculator</h1>
+          <p>A simple calculator made by Pravesh Kunwar.</p>
+        </div>
+        <div className="output">
+          <div>
+            <p>{this.state.output}</p>
+          </div>
+        </div>
+        <div className="buttons">
+          <div className="container-1">
+            {[1, 2, 3].map((item) => {
+              return <button onClick={this.handleClick}>{item}</button>;
+            })}
+          </div>
+          <div className="container-2">
+            {[4, 5, 6].map((item) => {
+              return <button onClick={this.handleClick}>{item}</button>;
+            })}
+          </div>
+          <div className="container-3">
+            {[7, 8, 9].map((item) => {
+              return <button onClick={this.handleClick}>{item}</button>;
+            })}
+          </div>
+          <div className="container-4">
+            <button>0</button>
+            <button>=</button>
+            <button>.</button>
+          </div>
+          <div className="clear-btn">
+            <div>
+              <button onClick={this.handleClear}>Clear</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    );
+  }
 }
 
 export default App;

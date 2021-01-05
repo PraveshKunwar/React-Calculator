@@ -1,0 +1,77 @@
+.container-1,
+.container-2,
+.container-3,
+.container-4 {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+}
+
+.buttons > div > button {
+  width: 90px;
+  height: 90px;
+}
+
+html {
+  background: #172a45;
+  font-family: "Comfortaa";
+}
+
+.welcome-statement {
+  margin-top: 1rem;
+  text-align: center;
+  color: white;
+  margin-bottom: 6rem;
+}
+
+button {
+  font-weight: 900;
+  font-size: 30px;
+  font-family: "Comfortaa";
+  background: linear-gradient(to left, salmon 50%, lightblue 50%) right;
+  background-size: 200%;
+  transition: 0.3s ease-out;
+  border-width: none;
+  border-color: none;
+  outline: none;
+}
+
+button:hover {
+  background-position: left;
+}
+
+button:focus {
+  outline: none;
+}
+
+.clear-btn > div {
+  display: flex;
+  justify-content: center;
+}
+
+.clear-btn > div > button {
+  width: 270px;
+  background: linear-gradient(to left, lightblue 50%, salmon 50%) right;
+  background-size: 200%;
+  transition: 0.3s ease-out;
+  color: white;
+}
+
+.clear-btn > div > button:hover {
+  background-position: left;
+}
+
+.output {
+  display: flex;
+  justify-content: center;
+}
+
+.output > div {
+  width: 270px;
+  background: black;
+}
+
+.output > div > p {
+  color: white;
+  text-align: ;
+}
