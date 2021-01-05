@@ -13,7 +13,7 @@
 }
 
 html {
-  background: #172a45;
+  background: #ee9ca7;
   font-family: "Comfortaa";
 }
 
@@ -25,10 +25,11 @@ html {
 }
 
 button {
+  color: white;
   font-weight: 900;
   font-size: 30px;
   font-family: "Comfortaa";
-  background: linear-gradient(to left, salmon 50%, lightblue 50%) right;
+  background: linear-gradient(to right, #d88b94 50%, lightblue 50%) right;
   background-size: 200%;
   transition: 0.3s ease-out;
   border-width: none;
@@ -50,8 +51,8 @@ button:focus {
 }
 
 .clear-btn > div > button {
-  width: 270px;
-  background: linear-gradient(to left, lightblue 50%, salmon 50%) right;
+  width: 360px;
+  background: linear-gradient(to left, lightblue 50%, #ffdde1 50%) right;
   background-size: 200%;
   transition: 0.3s ease-out;
   color: white;
@@ -67,11 +68,13 @@ button:focus {
 }
 
 .output > div {
-  width: 270px;
+  height: 80px;
+  width: 360px;
   background: black;
 }
 
 .output > div > p {
   color: white;
-  text-align: ;
+  font-size: 40px;
+  text-align: right;
 }

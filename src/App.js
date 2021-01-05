@@ -1,20 +1,25 @@
 import React from "react";
 import calculatorStyles from "./calc.css";
+const math = require("mathjs");
 
 class App extends React.Component {
   constructor() {
     super();
     this.state = {
-      output: "Output",
+      output: "",
     };
     this.handleClick = this.handleClick.bind(this);
     this.handleClear = this.handleClear.bind(this);
+    this.handleEval = this.handleEval.bind(this);
   }
   handleClick(e) {
-    this.setState({ output: e.target.innerHTML });
+    this.setState({ output: this.state.output + e.target.innerHTML });
   }
   handleClear(e) {
-    this.setState({ output: "Output" });
+    this.setState({ output: "" });
+  }
+  handleEval() {
+    this.setState({ output: math.evaluate(this.state.output) });
   }
   render() {
     return (
@@ -30,24 +35,25 @@ class App extends React.Component {
         </div>
         <div className="buttons">
           <div className="container-1">
-            {[1, 2, 3].map((item) => {
+            {[1, 2, 3, "+"].map((item) => {
               return <button onClick={this.handleClick}>{item}</button>;
             })}
           </div>
           <div className="container-2">
-            {[4, 5, 6].map((item) => {
+            {[4, 5, 6, "-"].map((item) => {
               return <button onClick={this.handleClick}>{item}</button>;
             })}
           </div>
           <div className="container-3">
-            {[7, 8, 9].map((item) => {
+            {[7, 8, 9, "*"].map((item) => {
               return <button onClick={this.handleClick}>{item}</button>;
             })}
           </div>
           <div className="container-4">
-            <button>0</button>
-            <button>=</button>
-            <button>.</button>
+            <button onClick={this.handleClick}>0</button>
+            <button onClick={this.handleEval}>=</button>
+            <button onClick={this.handleClick}>.</button>
+            <button onClick={this.handleClick}>/</button>
           </div>
           <div className="clear-btn">
             <div>
